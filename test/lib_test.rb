@@ -52,11 +52,11 @@ class RuggedTest < Rugged::TestCase
   end
 
   def test_minimize_oid_with_no_block
-    assert_equal Rugged::minimize_oid(@@oids), 12
+    assert_equal 12, Rugged::minimize_oid(@@oids)
   end
 
   def test_minimize_oid_with_min_length
-    assert_equal Rugged::minimize_oid(@@oids, 20), 20
+    assert_equal 20, Rugged::minimize_oid(@@oids, 20)
   end
 
   def test_minimize_oid_with_block
@@ -69,7 +69,7 @@ class RuggedTest < Rugged::TestCase
       "68d041ee999c"
     ]
 
-    assert_equal minimized_oids, expected_oids
+    assert_equal expected_oids, minimized_oids
   end
 
   def test_rugged_lib_constants
@@ -81,13 +81,13 @@ class RuggedTest < Rugged::TestCase
 
   def test_prettify_commit_messages
     message = <<-MESSAGE
-Testing this whole prettify business    
+Testing this whole prettify business
 
-with newlines and stuff  
+with newlines and stuff
 # take out this line haha
 # and this one
 
-not this one    
+not this one
 MESSAGE
 
     clean_message = <<-MESSAGE
